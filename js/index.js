@@ -12,6 +12,7 @@ function retornaTirinhas() {
 retornaTirinhas().then((res) => {
 
     const tirinhas = res.tirinhas;
+
     const umSabadoQualquer = tirinhas.umsabadoqualquer;
     const armandinho = tirinhas.armandinho;
     const vidaDeSuporte = tirinhas.vidadesuporte;
@@ -26,68 +27,45 @@ retornaTirinhas().then((res) => {
     this.funcXkcd(xkcd);
 
     //Sent to detail
-    this.sendToDetail(res);
-
+    this.detail(res);
 });
 
 function funcUmSabadoQualquer(params) {
     const img = document.getElementById('img-sabado');
     const views = document.getElementById('views-sabado');
-    const i = this.getRandomImage();
-    const total = this.getViews(params);
-
-    img.src = params[i].img;
-    views.textContent = ` ${total} Visualizações`;
+    this.showImageAndViews(img, views, params);
 }
 
 function funcAarmandinho(params) {
     const img = document.getElementById('img-armandinho');
     const views = document.getElementById('views-armandinho');
-    const i = this.getRandomImage();
-    const total = this.getViews(params);
-
-    img.src = params[i].img;
-    views.textContent = ` ${total} Visualizações`;
+    this.showImageAndViews(img, views, params);
 }
 
 function funcVidaDeSuporte(params) {
     const img = document.getElementById('img-suporte');
     const views = document.getElementById('views-suporte');
-    const i = this.getRandomImage();
-    const total = this.getViews(params);
-
-    img.src = params[i].img;
-    views.textContent = ` ${total} Visualizações`;
+    this.showImageAndViews(img, views, params);
 }
 
 function funcVidaProgramador(params) {
     const img = document.getElementById('img-programador');
     const views = document.getElementById('views-programador');
-    const i = this.getRandomImage();
-    const total = this.getViews(params);
-
-    img.src = params[i].img;
-    views.textContent = ` ${total} Visualizações`;
+    this.showImageAndViews(img, views, params);
 }
 
 function funcXkcd(params) {
     const img = document.getElementById('img-xkcd');
     const views = document.getElementById('views-xkcd');
-    const i = this.getRandomImage();
-    const total = this.getViews(params);
-
-    img.src = params[i].img;
-    views.textContent = ` ${total} Visualizações`;
+    this.showImageAndViews(img, views, params);
 }
 
 // Get total views
 function getViews(params) {
-
     let total = 0;
     for (let x of params) {
         total += x.views
     }
-
     return total;
 }
 
@@ -97,37 +75,50 @@ function getRandomImage() {
     return random;
 }
 
+function showImageAndViews(img, views, params) {
+    const i = this.getRandomImage();
+    const total = this.getViews(params);
+    img.src = params[i].img;
+    views.textContent = ` ${total} Visualizações`;
+}
+
 // Detail
-function sendToDetail(res) {
+function detail(res) {
 
     const sendSabado = document.getElementById('sendSabado');
     const sendProgramador = document.getElementById('sendProgramador');
     const sendXkcd = document.getElementById('sendXkcd');
     const sendSuporte = document.getElementById('sendSuporte');
     const sendArmandinho = document.getElementById('sendArmandinho');
-    
+
     sendSabado.addEventListener('click', () => {
-        localStorage.setItem('tirinha', JSON.stringify(res.tirinhas.umsabadoqualquer));
-        window.location.href = "detalhe.html"
+        const sabado = "Um Sabado Qualquer";
+        this.sendToDetail(sabado, res.tirinhas.umsabadoqualquer);
     });
-    
+
     sendProgramador.addEventListener('click', () => {
-        localStorage.setItem('tirinha', JSON.stringify(res.tirinhas.vidaprogramador));
-        window.location.href = "detalhe.html"
+        const programador = "Vida Programador";
+        this.sendToDetail(programador, res.tirinhas.vidaprogramador);
     });
-    
+
     sendXkcd.addEventListener('click', () => {
-        localStorage.setItem('tirinha', JSON.stringify(res.tirinhas.xkcd));
-        window.location.href = "detalhe.html"
+        const xkcd = "XKCD";
+        this.sendToDetail(xkcd, res.tirinhas.xkcd);
     });
-    
+
     sendSuporte.addEventListener('click', () => {
-        localStorage.setItem('tirinha', JSON.stringify(res.tirinhas.vidadesuporte));
-        window.location.href = "detalhe.html"
+        const suporte = "Vida de Suporte";
+        this.sendToDetail(suporte, res.tirinhas.vidadesuporte);
     });
-    
+
     sendArmandinho.addEventListener('click', () => {
-        localStorage.setItem('tirinha', JSON.stringify(res.tirinhas.armandinho));
-        window.location.href = "detalhe.html"
+        const armandinho = "Armandinho";
+        this.sendToDetail(armandinho, res.tirinhas.armandinho);
     });
+}
+
+function sendToDetail(titulo, tirinhas) {
+    localStorage.setItem('titulo', JSON.stringify(titulo));
+    localStorage.setItem('tirinha', JSON.stringify(tirinhas));
+    window.location.href = "detalhe.html"
 }
