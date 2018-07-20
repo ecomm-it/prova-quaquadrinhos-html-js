@@ -1,20 +1,26 @@
-//Retorna tirinhas do arquivo ../api.json utilizando Async/Await
-async function retornaTirinhas() {
+
+/** Retorna tirinhas do arquivo ../api.json utilizando Async/Await **/
+/** Poderia estar em arquivo separado e chamar no outros .html, mas é mais para mostrar a utilização de Async/Await */
+
+async function retornaTirinha() {
     const data = await fetch('../api.json');
     return data.json();
 }
 
+/** Recebe valores da função acima e chama exibeImagens(x) quadrinhos como parametro*/
 async function getTirinhas() {
-    const data = await retornaTirinhas();
+
+    const data = await retornaTirinha();
     const quadrinhos = await randomTirinha(data.tirinhas);
     const titulos = document.querySelectorAll('#tirinhaTitulo');
+
+    /** Exibe titulo do quadrinho*/
     titulos.forEach((titulo) => titulo.textContent = quadrinhos.titulo);
 
     exibeImagens(quadrinhos);
-
 }
 
-// Exibe imagems
+/** Exibe imagems do quadrinho aleatório */
 const exibeImagens = (quadrinhos) => {
     for (let quadrinho of quadrinhos) {
         const todasTirinhas = document.querySelector('#tirinhas');
@@ -22,10 +28,9 @@ const exibeImagens = (quadrinhos) => {
     }
 }
 
-// Tirinha randomica
-const randomTirinha = function (obj) {
+/** Retorna um quadrinho aleatório. Seta titulo para cada quadrinho.*/
+const randomTirinha = (obj) => {
 
-    //Set Titles
     obj.armandinho.titulo = 'Armandinho';
     obj.umsabadoqualquer.titulo = 'Um Sabado Qualquer';
     obj.vidaprogramador.titulo = 'Vida Programador';
@@ -33,8 +38,14 @@ const randomTirinha = function (obj) {
     obj.vidadesuporte.titulo = 'Vida de Suporte';
     obj.xkcd.titulo = 'XKCD';
 
+    /** Dei uma pesquisada aqui para ver como retorna um objeto aleatório. 
+        No caso, o param "obj" é um objeto contendo todos os quadrinhos.
+
+        REFERENCIA: https://stackoverflow.com/a/15106541/6909253
+    */
     var keys = Object.keys(obj);
     return obj[keys[keys.length * Math.random() << 0]];
 };
 
+/** INIT FUNCTION */
 getTirinhas();

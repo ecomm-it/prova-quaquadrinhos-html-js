@@ -1,5 +1,8 @@
-//Retorna tirinhas do arquivo ../api.json
-function retornaTirinhas() {
+
+/** Retorna tirinhas do arquivo ../api.json utilizando Fetch API **/
+/** Mesmo caso do random, aqui é mais paara mostrar um exemplo utilizando Fetch API e Promises. */
+
+const retornaTirinhas = () => {
     return fetch('../api.json').then((tirinhas) => {
         return tirinhas.json();
     }).then((data) => {
@@ -9,6 +12,7 @@ function retornaTirinhas() {
     });
 }
 
+/** INIT FUNCTION */
 retornaTirinhas().then((res) => {
 
     const tirinhas = res.tirinhas;
@@ -19,49 +23,48 @@ retornaTirinhas().then((res) => {
     const vidaProgramador = tirinhas.vidaprogramador;
     const xkcd = tirinhas.xkcd;
 
-    //Initialize functions
-    this.funcUmSabadoQualquer(umSabadoQualquer);
-    this.funcAarmandinho(armandinho);
-    this.funcVidaDeSuporte(vidaDeSuporte);
-    this.funcVidaProgramador(vidaProgramador);
-    this.funcXkcd(xkcd);
+    /** Initialize functions passing return value from api.json */
+    funcUmSabadoQualquer(umSabadoQualquer);
+    funcAarmandinho(armandinho);
+    funcVidaDeSuporte(vidaDeSuporte);
+    funcVidaProgramador(vidaProgramador);
+    funcXkcd(xkcd);
 
-    //Sent to detail
-    this.detail(res);
 });
 
-function funcUmSabadoQualquer(params) {
+/** These group of functions display a random imagem and total views */
+const funcUmSabadoQualquer = (params) => {
     const img = document.getElementById('img-sabado');
     const views = document.getElementById('views-sabado');
-    this.showImageAndViews(img, views, params);
+    showImageAndViews(img, views, params);
 }
 
-function funcAarmandinho(params) {
+const funcAarmandinho = (params) => {
     const img = document.getElementById('img-armandinho');
     const views = document.getElementById('views-armandinho');
-    this.showImageAndViews(img, views, params);
+    showImageAndViews(img, views, params);
 }
 
-function funcVidaDeSuporte(params) {
+const funcVidaDeSuporte = (params) => {
     const img = document.getElementById('img-suporte');
     const views = document.getElementById('views-suporte');
-    this.showImageAndViews(img, views, params);
+    showImageAndViews(img, views, params);
 }
 
-function funcVidaProgramador(params) {
+const funcVidaProgramador = (params) => {
     const img = document.getElementById('img-programador');
     const views = document.getElementById('views-programador');
-    this.showImageAndViews(img, views, params);
+    showImageAndViews(img, views, params);
 }
 
-function funcXkcd(params) {
+const funcXkcd = (params) => {
     const img = document.getElementById('img-xkcd');
     const views = document.getElementById('views-xkcd');
-    this.showImageAndViews(img, views, params);
+    showImageAndViews(img, views, params);
 }
 
-// Get total views
-function getViews(params) {
+/** Return total views from a comic passed as parameter */
+const getViews = (params) => {
     let total = 0;
     for (let x of params) {
         total += x.views
@@ -69,56 +72,32 @@ function getViews(params) {
     return total;
 }
 
-// Random image
-function getRandomImage() {
+/** Loads a random image in order to be displayed in the main page */
+const getRandomImage = () => {
     const random = Math.floor(Math.random() * 3);
     return random;
 }
 
-function showImageAndViews(img, views, params) {
-    const i = this.getRandomImage();
-    const total = this.getViews(params);
+/** Displays the image and total views for each comic */
+const showImageAndViews = (img, views, params) => {
+    const i = getRandomImage();
+    const total = getViews(params);
     img.src = params[i].img;
-    views.textContent = ` ${total} Visualizações`;
+    views.textContent = `${total} Visualizações`;
 }
 
-// Detail
-function detail(res) {
+/**  Opens modal */
+const comicaModal = () => {
 
-    const sendSabado = document.getElementById('sendSabado');
-    const sendProgramador = document.getElementById('sendProgramador');
-    const sendXkcd = document.getElementById('sendXkcd');
-    const sendSuporte = document.getElementById('sendSuporte');
-    const sendArmandinho = document.getElementById('sendArmandinho');
+    const items = document.querySelectorAll('.find-place-img_wrap');
+    let modalImg = document.getElementById('modalImg');
 
-    sendSabado.addEventListener('click', () => {
-        const sabado = "Um Sabado Qualquer";
-        this.sendToDetail(sabado, res.tirinhas.umsabadoqualquer);
-    });
-
-    sendProgramador.addEventListener('click', () => {
-        const programador = "Vida Programador";
-        this.sendToDetail(programador, res.tirinhas.vidaprogramador);
-    });
-
-    sendXkcd.addEventListener('click', () => {
-        const xkcd = "XKCD";
-        this.sendToDetail(xkcd, res.tirinhas.xkcd);
-    });
-
-    sendSuporte.addEventListener('click', () => {
-        const suporte = "Vida de Suporte";
-        this.sendToDetail(suporte, res.tirinhas.vidadesuporte);
-    });
-
-    sendArmandinho.addEventListener('click', () => {
-        const armandinho = "Armandinho";
-        this.sendToDetail(armandinho, res.tirinhas.armandinho);
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            $('#comic').modal();
+            modalImg.innerHTML = item.getElementsByTagName('img')[0].outerHTML;
+        });
     });
 }
 
-function sendToDetail(titulo, tirinhas) {
-    localStorage.setItem('titulo', JSON.stringify(titulo));
-    localStorage.setItem('tirinha', JSON.stringify(tirinhas));
-    window.location.href = "detalhe.html"
-}
+comicaModal();
