@@ -67,8 +67,10 @@ const funcXkcd = (params) => {
 const getViews = (params) => {
     let total = 0;
     for (let x of params) {
+        console.log(x)
         total += x.views
     }
+
     return total;
 }
 
