@@ -1,0 +1,31 @@
+{
+  "name": "prova-quaquadrinhos-html",
+  "version": "1.0.0",
+  "description": "Este é um projeto para candidatos da prova da vaga de desenvolvedor de Html + Javascript",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-less": "^4.0.1",
+    "gulp-sass": "^4.0.1",
+    "less": "^3.8.0",
+    "live-server": "^1.2.0",
+    "node-sass": "^4.9.2"
+  },
+  "devDependencies": {
+    "gulp-flex-svg": "^1.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabsgasps/prova-quaquadrinhos-html-js.git"
+  },
+  "author": "Gabriel Gasparino Rubia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabsgasps/prova-quaquadrinhos-html-js/issues"
+  },
+  "homepage": "https://github.com/gabsgasps/prova-quaquadrinhos-html-js#readme"
+}

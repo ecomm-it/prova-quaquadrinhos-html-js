@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -46,11 +45,11 @@
                                             <span class="icon-arrow-down"></span>
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <a class="dropdown-item" href="#">Um Sabado Qualquer</a>
-                                            <a class="dropdown-item" href="#">Vida de Programador</a>
-                                            <a class="dropdown-item" href="#">Xkcd</a>
-                                            <a class="dropdown-item" href="#">Vida de Suporte</a>
-                                            <a class="dropdown-item" href="#">Armandinho</a>
+                                            <a class="dropdown-item" href="detalhe.html?umsabadoqualquer">Um Sabado Qualquer</a>
+                                            <a class="dropdown-item" href="detalhe.html?vidadeprogramador">Vida de Programador</a>
+                                            <a class="dropdown-item" href="detalhe.html?xkcd">Xkcd</a>
+                                            <a class="dropdown-item" href="detalhe.html?vidadesuporte">Vida de Suporte</a>
+                                            <a class="dropdown-item" href="detalhe.html?armandinho">Armandinho</a>
                                         </div>
                                     </li>
                                     <li class="nav-item active">
@@ -89,6 +88,7 @@
     <!--// SLIDER -->
     <!--//END HEADER -->
     <!--============================= FIND PLACES =============================-->
+    <div class="introduceModal"></div>
     <section class="main-block">
         <div class="container">
             <div class="row justify-content-center">
@@ -101,14 +101,8 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="find-place-img_wrap">
-                        <div class="grid">
-                            <figure class="effect-ruby">
-                                <img src="https://www.umsabadoqualquer.com/wp-content/uploads/2018/06/224.jpg" class="img-fluid" alt="img13" />
-                                <figcaption>
-                                    <h5>Um sabado qualquer </h5>
-                                    <p>2 Visualizações</p>
-                                </figcaption>
-                            </figure>
+                        <div class="grid umsabadoqualquer">
+                            
                         </div>
                     </div>
                 </div>
@@ -116,14 +110,8 @@
                     <div class="row find-img-align">
                         <div class="col-md-12">
                             <div class="find-place-img_wrap">
-                                <div class="grid">
-                                    <figure class="effect-ruby">
-                                        <img src="https://vidadeprogramador.com.br/uploads/2018/06/tirinha1865.png" class="img-fluid" alt="img13" />
-                                        <figcaption>
-                                            <h5>Vida de programador</h5>
-                                            <p>5 Visualizações</p>
-                                        </figcaption>
-                                    </figure>
+                                <div class="grid vidaprogramador">
+                                    
                                 </div>
                             </div>
                         </div>
@@ -131,14 +119,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="find-place-img_wrap">
-                                <div class="grid">
-                                    <figure class="effect-ruby">
-                                        <img src="https://imgs.xkcd.com/comics/negative_results.png" class="img-fluid" alt="img13" />
-                                        <figcaption>
-                                            <h5>Xkcd </h5>
-                                            <p>9 Visualizações</p>
-                                        </figcaption>
-                                    </figure>
+                                <div class="grid xkcd">
                                 </div>
                             </div>
                         </div>
@@ -148,14 +129,8 @@
                     <div class="row find-img-align">
                         <div class="col-md-12">
                             <div class="find-place-img_wrap">
-                                <div class="grid">
-                                    <figure class="effect-ruby">
-                                        <img src="https://vidadesuporte.com.br/wp-content/uploads/2018/07/Suporte_2053.jpg" class="img-fluid" alt="img13" />
-                                        <figcaption>
-                                            <h5>Vida de Suporte </h5>
-                                            <p>50 Visualizações</p>
-                                        </figcaption>
-                                    </figure>
+                                <div class="grid vidadesuporte">
+                                    
                                 </div>
                             </div>
                         </div>
@@ -163,14 +138,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="find-place-img_wrap">
-                                <div class="grid">
-                                    <figure class="effect-ruby">
-                                        <img src="https://78.media.tumblr.com/313dd09abdae2797c01a899f1ac4b68e/tumblr_osjgarQf8g1u1iysqo1_1280.png" class="img-fluid" alt="img13" />
-                                        <figcaption>
-                                            <h5>Armandinho</h5>
-                                            <p>50 Visualizações</p>
-                                        </figcaption>
-                                    </figure>
+                                <div class="grid armandinho">
                                 </div>
                             </div>
                         </div>
@@ -187,7 +155,7 @@
                 <div class="col-md-12">
                     <div class="add-listing-wrap">
                         <h2>Se inscreva para receber no seu e-mail</h2>
-                        <p><input type="text" style="width:35%" value="" /></p>
+                        <p><input type="text" style="width:35%" value=""></p>
                     </div>
                 </div>
             </div>
@@ -215,11 +183,7 @@
             </div>
         </div>
     </footer>
-    <!--//END FOOTER -->
-
-
-
-
+    <!--//END FOOTER -->    
     <!-- jQuery, Bootstrap JS. -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -240,6 +204,18 @@
 
             };
         });
+    </script>    
+    <script src="js/controllers/PrincipalController.js"></script>
+    <script src="js/services/GetInformation.js"></script>
+    <script src="js/view/View.js"></script>
+    <script src="js/view/indexViews/ViewPrincipal.js"></script>
+    <script src="js/view/indexViews/ViewPrincipal1.js"></script>
+    <script src="js/view/indexViews/ViewPrincipal2.js"></script>
+    <script src="js/view/indexViews/ViewPrincipal3.js"></script>
+    <script src="js/view/indexViews/ViewPrincipal4.js"></script>
+    <script src="js/view/indexViews/MontaModal.js"></script>
+    <script type="text/javascript">
+        var controller = new PrincipalController();
     </script>
 </body>
 

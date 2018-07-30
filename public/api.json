@@ -25,25 +25,25 @@
 		"umsabadoqualquer": [
             {
                 "id": 4,
-                "tags": "umsabadoqualquer mundo avesso",
+                "tags": "um sabado qualquer mundo avesso",
                 "views": 3,
                 "img": "https://www.umsabadoqualquer.com/wp-content/uploads/2018/06/171.jpg"
             },
 			{
                 "id": 5,
-                "tags": "umsabadoqualquer neymar",
+                "tags": "um sabadoqualquer neymar",
                 "views": 10,
                 "img": "https://www.umsabadoqualquer.com/wp-content/uploads/2018/06/170.jpg"
             },
             {
                 "id": 6,
-                "tags": "umsabadoqualquer mãe praga mundo avesso",
+                "tags": "um sabadoqualquer mãe praga mundo avesso",
                 "views": 11,
                 "img": "https://www.umsabadoqualquer.com/wp-content/uploads/2018/06/169.jpg"
             },
             {
                 "id": 20,
-                "tags": "umsabadoqualquer gato cachorro",
+                "tags": "um sabadoqualquer gato cachorro",
                 "views": 7,
                 "img": "https://www.umsabadoqualquer.com/wp-content/uploads/2018/06/224.jpg",
                 "capa": 1
@@ -52,20 +52,20 @@
 		"vidaprogramador": [
             {
                 "id": 7,
-                "tags": "vidaprogramador gerente ftp",
+                "tags": "vida de programador gerente ftp",
                 "views": 50,
                 "img": "https://vidadeprogramador.com.br/uploads/2018/06/tirinha1865.png",
                 "capa": 1
             },
 			{
                 "id": 8,
-                "tags": "vidaprogramador zoando termina tudo",
+                "tags": "vida de programador zoando termina tudo",
                 "views": 3,
                 "img": "https://vidadeprogramador.com.br/uploads/2018/06/tirinha1427.png"
             },
             {
                 "id": 9,
-                "tags": "vidaprogramador 300 loop",
+                "tags": "vida de programador 300 loop",
                 "views": 9,
                 "img": "https://vidadeprogramador.com.br/uploads/2018/06/tirinha1863.png"
             }
@@ -73,20 +73,20 @@
 		"vidadesuporte": [
             {
                 "id": 10,
-                "tags": "vidadesuporte 300 loop",
+                "tags": "vida de suporte 300 loop",
                 "views": 22,
                 "img": "https://vidadesuporte.com.br/wp-content/uploads/2018/07/Suporte_2053.jpg",
                 "capa": 1
             },
             {
                 "id": 11,
-                "tags": "vidadesuporte taxidriver",
+                "tags": "vida de suporte taxidriver",
                 "views": 3,
                 "img": "https://vidadesuporte.com.br/wp-content/uploads/2018/07/Suporte_2052.jpg"
             },
             {
                 "id": 12,
-                "tags": "vidadesuporte arqueólogo",
+                "tags": "vida de suporte arqueólogo",
                 "views": 2,
                 "img": "https://vidadesuporte.com.br/wp-content/uploads/2018/07/Suporte_2051.jpg"
             }
