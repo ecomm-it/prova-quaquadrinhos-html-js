@@ -8,7 +8,7 @@ class ViewRandomText extends View{
 	template(model, num1) {
 
 		return `
-			<h6>${model[num1].tags.toUpperCase()}</h6>
+			<h1>${model[num1].tags.toUpperCase()}</h1>
 		`
 	}
 }

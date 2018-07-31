@@ -55,7 +55,7 @@
                                     <li class="nav-item active">
                                         <a class="nav-link" href="about.html">Sobre</a>
                                     </li>
-                                    <li><a href="#" class="btn btn-outline-light top-btn"><span class="ti-plus"></span> ME INSCREVER</a></li>
+                                    <li><a href="#meInscrever" class="btn btn-outline-light top-btn"><span class="ti-plus"></span> ME INSCREVER</a></li>
                                 </ul>
                             </div>
                         
@@ -155,14 +155,14 @@
                 <div class="col-md-12">
                     <div class="add-listing-wrap">
                         <h2>Se inscreva para receber no seu e-mail</h2>
-                        <p><input type="text" style="width:35%" value=""></p>
+                        <p><input type="text" style="width:35%" value="" placeholder="E-mail:" class="email"></p>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-4">
                     <div class="featured-btn-wrap">
-                        <a href="#" class="btn btn-danger"><span class="ti-plus"></span> ME INSCREVER</a>
+                        <a href="" id="meInscrever" data-target="#exampleModalCenter" data-toggle="modal" class="btn btn-danger"><span class="ti-plus" ></span> ME INSCREVER</a>
                     </div>
                 </div>
             </div>
@@ -214,6 +214,7 @@
     <script src="js/view/indexViews/ViewPrincipal3.js"></script>
     <script src="js/view/indexViews/ViewPrincipal4.js"></script>
     <script src="js/view/indexViews/MontaModal.js"></script>
+    <script src="js/view/indexViews/ModalEmail.js"></script>
     <script type="text/javascript">
         var controller = new PrincipalController();
     </script>

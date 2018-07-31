@@ -4,6 +4,10 @@ class PrincipalController{
 
 		let $ = document.querySelector.bind(document);
 
+		this._campoEmail = $(".email");
+
+		this._btnInscrever = $("#meInscrever");
+
 		this._getInformation = new GetInformation();
 
 		this._viewPrincipal = new ViewPrincipal($(".umsabadoqualquer"));
@@ -18,8 +22,11 @@ class PrincipalController{
 
 		this._modal = new MontaModal($(".introduceModal"));
 
+		this._modalEmail = new ModalEmail($(".introduceModal"));
+
 		this.principal();
 
+		this.email();
 	}
 
 	principal() {
@@ -39,5 +46,32 @@ class PrincipalController{
 	modal(tirinha) {
 		//passa o tirinha = src-da-imagem que foi clicada
 		this._modal.update(tirinha);
+	}
+
+	email() {
+
+		this._btnInscrever.addEventListener('click', (event) => {
+
+			event.preventDefault();
+
+			if (this._campoEmail.value.length > 0) {
+
+				if (this._campoEmail.value.indexOf('@') != -1) {
+
+					if (this._campoEmail.value === localStorage.getItem('Email')) 
+						alert('Este e-mail já é existente');
+					else{
+						localStorage.setItem('Email', this._campoEmail.value);
+						this._modalEmail.update('E-mail cadastrado, bem vindo !');
+						this._campoEmail.value = '';
+					}
+				}else{
+					alert('Preencha o cmapo de E-mail!!!!');
+				}
+				
+			}else{
+				alert('Preencha o cmapo de E-mail');
+			}
+		});
 	}
 }

@@ -10,7 +10,6 @@ class RandomController{
 
 		this._viewText = new ViewRandomText($(".introduceText"));
 
-		this._viewText1 = new ViewRandomText1($(".introduceText1"));
 
 		this.mudaConteudo();
 	}
