@@ -8,14 +8,14 @@ class ViewPrincipal extends View{
 	template(model){
 		let tiras = model.tirinhas;
 
-		//local Storage
+		//armazena o número de cliques no local Storage
 		let i = 1;
 		this._element.addEventListener('click', () =>
 			localStorage.setItem('umsabadoqualquer', i++));
 
 		var views = localStorage.getItem('umsabadoqualquer');
 		views = JSON.parse(views);
-
+		//
 		return `
 			<figure class="effect-ruby" >
 			

@@ -10,15 +10,14 @@ class RandomController{
 
 		this._viewText = new ViewRandomText($(".introduceText"));
 
-
 		this.mudaConteudo();
 	}
 
 	mudaConteudo() {
 
-		let y = Math.floor(Math.random() * 5);
+		let indice = Math.floor(Math.random() * 5);
 
-		let x = Math.floor(Math.random() * 3);
+		let num = Math.floor(Math.random() * 3);
 
 		this._getInformation
 			.filtra('api.json')
@@ -28,8 +27,8 @@ class RandomController{
 					tirinhas.xkcd, tirinhas.armandinho,
 					tirinhas.vidadesuporte, tirinhas.vidaprogramador];
 
-				this._viewImg.update(tiras[y], x);
-				this._viewText.update(tiras[y], x);
+				this._viewImg.update(tiras[indice], num);
+				this._viewText.update(tiras[indice], num);
 			})
 			.catch(e => console.log(e));
 

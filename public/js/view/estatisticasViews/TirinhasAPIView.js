@@ -1,4 +1,4 @@
-class TirinhaMaisVistaGeralView extends View{
+class TirinhasAPIView extends View{
 
 	constructor(element) {
 

@@ -7,11 +7,11 @@ class EstatisticaController{
 		this._getInformation = new GetInformation();
 
 		///Instancias das views
-		this._maisVistaGeralView = new TirinhaMaisVistaGeralView($(".tirinhasMaisVistaGeral"));
+		this._maisVistaGeralView = new TirinhasAPIView($(".tirinhasMaisVistaGeral"));
 
-		this._menosVistaGeralView = new TirinhaMaisVistaGeralView($(".tirinhaMenosVistaGeral"));
+		this._menosVistaGeralView = new TirinhasAPIView($(".tirinhaMenosVistaGeral"));
 
-		this._maiorMediaVistaView = new TirinhaMaisVistaGeralView($(".tirinhaMaiorMediaVista"));
+		this._maiorMediaVistaView = new TirinhasAPIView($(".tirinhaMaiorMediaVista"));
 
 		this._estatisticaView1 = new EstatisticasView1($(".introduceEstatistica1"));
 		//////////////////////////////---////
@@ -20,23 +20,13 @@ class EstatisticaController{
 
 	}
 
-	_montaEstatisticas() {
-		let tirinhas = [
+	_montaEstatisticas() {}
 
-			localStorage.getItem('umsabadoqualquer'),
-			localStorage.getItem('vidaprogramador'),
-			localStorage.getItem('xkcd'),
-			localStorage.getItem('vidadesuporte'),
-			localStorage.getItem('armandinho')
-		];
-		
-		var max = tirinhas.reduce((a, b) => Math.max(a, b));
-
-		console.log(max);
 
 		this._getInformation
 			.filtra('api.json')
 			.then(res => {
+
 				this._maisVistaGeralView.update(res.vidaprogramador, 0);
 				this._menosVistaGeralView.update(res.xkcd, 2);
 				this._maiorMediaVistaView.update(res.vidaprogramador, 0, ', a média de 16,66% de visualizações');
@@ -46,12 +36,4 @@ class EstatisticaController{
 
 	}
 
-	_filtramaior(res) {
-
-		res.xkcd
-		res.umsabadoqualquer
-		res.armandinho
-		res.vidadesuporte
-		res.vidaprogramador
-	}
 }
