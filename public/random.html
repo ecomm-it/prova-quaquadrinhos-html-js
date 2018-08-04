@@ -1,18 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
+	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Colorlib">
     <meta name="description" content="#">
     <meta name="keywords" content="#">
-    <!-- Favicons -->
-    <link rel="shortcut icon" href="#">
     <!-- Page Title -->
-    <title> QuaQuadrinhos </title>
+    <title> Random </title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Google Fonts -->
@@ -32,7 +28,7 @@
 </head>
 
 <body>
-    <!--============================= HEADER =============================-->
+	<!--============================= HEADER =============================-->
     <div class="dark-bg sticky-top">
         <div class="container-fluid">
             <div class="row">
@@ -70,7 +66,7 @@
         </div>
     </div>
     <!--//END HEADER -->
-    <!--============================= BOOKING =============================-->
+
     <div>
         <!-- Swiper -->
         <section class="slider d-flex align-items-center">
@@ -91,19 +87,8 @@
                     </div>
         </section>
     </div>
-    <!--//END BOOKING -->
-    <!--============================= RESERVE A SEAT =============================-->
-    <section class="reserve-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 introduceText1">
-                    
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--//END RESERVE A SEAT -->
-    <!--============================= BOOKING DETAILS =============================-->
+    <!---------------------------------------------------------->
+
     <section class="light-bg booking-details_wrap">
         <div class="container">
             <div class="row justify-content-center">
@@ -114,18 +99,10 @@
                         </div>
                     </div>
                 </div>
-            
-                <div class="col-md-8 responsive-wrap">
-                    <div class="booking-checkbox_wrap mt-4">
-                        <div class="booking-checkbox introduceImg1">
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
-    <!--//END BOOKING DETAILS -->
-
+    
     <!--============================= FOOTER =============================-->
     <footer class="main-block dark-bg">
         <div class="container">
@@ -190,17 +167,13 @@
             });
         }
     </script>
-
-
-    <script src="js/view/View.js"></script>
-    <script src="js/controllers/DetalheController.js"></script>
     <script src="js/services/GetInformation.js"></script>
-    <script src="js/view/detalheViews/ViewDetalheImgs.js"></script>
-    <script src="js/view/detalheViews/ViewDetalheText.js"></script>
-    <script src="js/view/detalheViews/ViewDetalheText1.js"></script>
+    <script src="js/controllers/RandomController.js"></script>
+    <script src="js/view/View.js"></script>
+    <script src="js/view/randomViews/ViewRandomImg.js"></script>
+    <script src="js/view/randomViews/ViewRandomText.js"></script>
     <script type="text/javascript">
-        var controller = new DetalheController();
+        let controller = new RandomController();
     </script>
 </body>
-
 </html>
